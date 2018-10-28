@@ -85,7 +85,7 @@ WXAGGBACKEND_BUILD_DEPENDS=	Xvfb:x11-servers/xorg-vfbserver
 .endif
 
 .include <bsd.port.options.mk>
-.if ${PORT_OPTIONS:QT4AGG_BACKEND}
+.if ${PORT_OPTIONS:MQT4AGG_BACKEND}
 DEPRECATED=		Qt4 has been EOL since december 2015
 EXPIRATION_DATE=	2019-03-15
 .endif
