@@ -11,9 +11,6 @@ COMMENT=	Simple, open source, cross-platform Go IDE
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/LICENSE.LGPL
 
-DEPRECATED=		Qt4 has been EOL since december 2015
-EXPIRATION_DATE=	2019-03-15
-
 BUILD_DEPENDS=	go:lang/go
 RUN_DEPENDS=	go:lang/go \
 		gocode:devel/go-gocode
@@ -34,6 +31,9 @@ GH_ACCOUNT=	visualfc
 GH_TUPLE=	visualfc:gotools:77fd0f0:gotools/src/github.com/visualfc/gotools
 
 .if ${FLAVOR} == qt4
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 USES+=		qt:4
 USE_QT=		corelib gui moc_build network rcc_build uic_build webkit xml
 PLIST_SUB+=	QT4="" NO_QT4="@comment "

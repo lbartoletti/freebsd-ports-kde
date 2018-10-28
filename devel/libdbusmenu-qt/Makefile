@@ -15,9 +15,6 @@ COMMENT?=	Qt4 implementation of the DBusMenu protocol
 
 LICENSE=	LGPL20
 
-DEPRECATED=		Qt4 has been EOL since december 2015
-EXPIRATION_DATE=	2019-03-15
-
 FLAVORS=	qt4 qt5
 FLAVOR?=	${FLAVORS:[1]}
 
@@ -25,6 +22,9 @@ USES=		compiler:c++11-lib cmake:outsource
 USE_LDCONFIG=	yes
 
 .  if ${FLAVOR} == qt4
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 USES+=		qt:4
 USE_QT=		corelib dbus gui \
 		moc_build qmake_build rcc_build uic_build

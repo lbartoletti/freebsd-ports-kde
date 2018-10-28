@@ -15,10 +15,6 @@ COMMENT=	Interactive tool for creating random fractal planets and terrain
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
-
-DEPRECATED=		Qt4 has been EOL since december 2015
-EXPIRATION_DATE=	2019-03-15
-
 BROKEN_powerpc64=	fails to link: obj/fracplanet.o:(.text+0x250): undefined reference to boost::program_options::options_description::options_description
 
 LIB_DEPENDS=	libboost_program_options.so:devel/boost-libs
@@ -32,6 +28,9 @@ USE_GL=		gl glu
 QMAKE_ARGS=	VERSION_NUMBER=${PORTVERSION}
 
 .if ${FLAVOR} == qt4
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 USES+=	qt:4
 USE_QT=		corelib gui moc_build opengl
 .else

@@ -10,9 +10,6 @@ COMMENT=	Integrated writing environment for LaTeX documents
 
 LICENSE=	GPLv2
 
-DEPRECATED=		Qt4 has been EOL since december 2015
-EXPIRATION_DATE=	2019-03-15
-
 BROKEN_aarch64=		fails to compile: error: no member named mc_eip in __mcontext
 BROKEN_armv6=		fails to compile: error: no member named mc_eip in __mcontext
 
@@ -31,6 +28,9 @@ USES=		desktop-file-utils dos2unix ghostscript:run \
 		pkgconfig qmake
 
 .if ${FLAVOR} == qt4
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 USES+=		qt:4
 USE_QT=		corelib gui network script svg xml \
 		iconengines_run designer_build moc_build rcc_build uic_build

@@ -12,9 +12,6 @@ COMMENT=	Daemon that monitors one or more GPSes attached to a host computer
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-DEPRECATED=		Qt4 has been EOL since december 2015
-EXPIRATION_DATE=	2019-03-15
-
 USES=		cpe pathfix pkgconfig python:2.7 scons shebangfix
 CPE_VENDOR=	gpsd_project
 USE_PYTHON=	flavors
@@ -149,6 +146,12 @@ X11_USE=	GNOME=gtk30
 
 # Build control
 PROFILING_MAKE_ARGS=	profiling=yes
+
+.include <bsd.port.options.mk>
+.if ${PORT_OPTIONS:MQTBIND}
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+.endif
 
 # generates .py[co] files for installed modules
 # if that's not done, ${PYTHON_SITELIBDIR}/gps will be polluted

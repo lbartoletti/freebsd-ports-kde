@@ -16,9 +16,6 @@ COMMENT=	Plotting library uses a syntax familiar to MATLAB users
 
 LICENSE=	PSFL
 
-DEPRECATED=		Qt4 has been EOL since december 2015
-EXPIRATION_DATE=	2019-03-15
-
 BUILD_DEPENDS=	${PYNUMPY}
 LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libpng.so:graphics/png \
@@ -57,7 +54,7 @@ GTKAGGBACKEND_VARS_OFF=	GTKAGG_BACKEND=False
 QT4AGGBACKEND_DESC=	Qt4Agg backend support
 QT4AGGBACKEND_USES=	pyqt:4
 QT4AGGBACKEND_USE=	PYQT=gui
-QT4AGGBACKEND_VARS=	QT4AGG_BACKEND=True
+QT4AGGBACKEND_VARS=	QT4AGG_BACKEND=True D
 QT4AGGBACKEND_VARS_OFF=	QT4AGG_BACKEND=False
 QT5AGGBACKEND_DESC=	Qt5Agg backend support
 QT5AGGBACKEND_USES=	pyqt:5
@@ -85,6 +82,12 @@ QT4AGGBACKEND_BUILD_DEPENDS+=	Xvfb:x11-servers/xorg-vfbserver
 QT5AGGBACKEND_BUILD_DEPENDS+=	Xvfb:x11-servers/xorg-vfbserver
 TKAGGBACKEND_BUILD_DEPENDS+=	Xvfb:x11-servers/xorg-vfbserver
 WXAGGBACKEND_BUILD_DEPENDS=	Xvfb:x11-servers/xorg-vfbserver
+.endif
+
+.include <bsd.port.options.mk>
+.if ${PORT_OPTIONS:QT4AGG_BACKEND}
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
 .endif
 
 post-extract:

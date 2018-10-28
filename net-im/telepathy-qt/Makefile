@@ -12,9 +12,6 @@ COMMENT=	High-level Qt binding for Telepathy
 
 LICENSE=	LGPL21
 
-DEPRECATED=		Qt4 has been EOL since december 2015
-EXPIRATION_DATE=	2019-03-15
-
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/_dbus_bindings.so:devel/py-dbus@${PY_FLAVOR}
 LIB_DEPENDS=	libtelepathy-farstream.so:net-im/telepathy-farstream \
 		libtelepathy-glib.so:net-im/telepathy-glib
@@ -37,6 +34,9 @@ CMAKE_ARGS=	-DDESIRED_QT_VERSION:STRING=${PKGNAMESUFFIX} \
 		-DQT_QMAKE_EXECUTABLE:FILEPATH=${QMAKE}
 
 . if ${FLAVOR} == qt4
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 USES+=		qt:4
 USE_QT=		corelib dbus gui network xml \
 		moc_build qmake_build qtestlib_build rcc_build uic_build

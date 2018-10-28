@@ -10,8 +10,6 @@ COMMENT=	Interactive disassembler for x86/ARM/MIPS
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-DEPRECATED=		Qt4 has been EOL since december 2015
-EXPIRATION_DATE=	2019-03-15
 
 BUILD_DEPENDS=	bash:shells/bash \
 		binutils>=2:devel/binutils \
@@ -41,6 +39,13 @@ OPTIONS_DEFAULT=	MEMMAP
 MEMMAP_DESC=	View memory maps (pulls in QT4)
 MEMMAP_USES=	pyqt:4
 MEMMAP_USE=	PYQT=gui_run
+
+.include <bsd.ports.options.mk>
+
+.if ${PORT_OPTIONS:MMEMMAP}
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/setup.py

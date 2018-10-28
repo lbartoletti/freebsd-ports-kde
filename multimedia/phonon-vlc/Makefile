@@ -15,9 +15,6 @@ COMMENT=	VLC backend for Phonon
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING.LIB
 
-DEPRECATED=		Qt4 has been EOL since december 2015
-EXPIRATION_DATE=	2019-03-15
-
 FLAVORS=	qt4 qt5
 FLAVOR?=	${FLAVORS:[1]}
 
@@ -27,6 +24,9 @@ qt5_LIB_DEPENDS=	libvlc.so:multimedia/vlc
 USES=		cmake:outsource pkgconfig tar:xz
 
 .  if ${FLAVOR} == qt4
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 USES+=		kde:4 qt:4
 USE_KDE=	automoc4
 USE_QT=		corelib gui phonon \

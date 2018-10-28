@@ -13,8 +13,6 @@ COMMENT=	Personal full text search package, based on Xapian
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-DEPRECATED=		Qt4 has been EOL since december 2015
-EXPIRATION_DATE=	2019-03-15
 
 LIB_DEPENDS=	libxapian.so:databases/xapian-core
 RUN_DEPENDS=	unrar:archivers/unrar \
@@ -73,6 +71,12 @@ X11MON_USE=		xorg=ice,sm,x11
 X11MON_CONFIGURE_ENABLE=x11mon
 X11MON_CONFIGURE_WITH=	fam
 X11MON_BROKEN=		does not build: index/rclmonrcv.cpp:(.text+0x1f13): undefined reference to `FAMOpen2'
+
+.include <bsd.port.options.mk>
+.if ${PORT_OPTIONS:MQT4}
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e \

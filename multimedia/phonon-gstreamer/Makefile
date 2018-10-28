@@ -14,9 +14,6 @@ COMMENT=	GStreamer backend for Phonon
 
 LICENSE=	LGPL21
 
-DEPRECATED=		Qt4 has been EOL since december 2015
-EXPIRATION_DATE=	2019-03-15
-
 FLAVORS=	qt4 qt5
 FLAVOR?=	${FLAVORS:[1]}
 
@@ -32,6 +29,9 @@ USE_GSTREAMER1=	yes
 USE_XORG=	x11
 
 .  if ${FLAVOR} == qt4
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 USES+=		kde:4 qt:4
 USE_KDE=	automoc4
 USE_QT=		corelib gui opengl phonon \

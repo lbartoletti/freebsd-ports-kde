@@ -11,9 +11,6 @@ COMMENT=	Qt Designer plugin for Phonon
 
 LICENSE=	LGPL21
 
-DEPRECATED=		Qt4 has been EOL since december 2015
-EXPIRATION_DATE=	2019-03-15
-
 FLAVORS=	qt4 qt5
 FLAVOR?=	${FLAVORS:[1]}
 
@@ -23,6 +20,9 @@ qt5_PKGNAMESUFFIX=	-designerplugin-qt5
 USES=		cmake tar:xz
 
 .  if ${FLAVOR} == qt4
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 USES+=		kde:4 qt:4
 USE_QT=		corelib designer gui phonon \
 		qmake_build moc_build rcc_build uic_build

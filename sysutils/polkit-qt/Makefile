@@ -15,9 +15,6 @@ COMMENT=	Qt${FLAVOR:C/qt//} wrapper around Polkit libraries
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-DEPRECATED=		Qt4 has been EOL since december 2015
-EXPIRATION_DATE=	2019-03-15
-
 LIB_DEPENDS=	libpolkit-agent-1.so:sysutils/polkit
 
 FLAVORS=	qt4 qt5
@@ -29,6 +26,9 @@ CMAKE_OFF=	BUILD_EXAMPLES  \
 		BUILD_TEST
 
 .  if ${FLAVOR} == qt4
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 USES+=		kde:4 qt:4
 USE_KDE=	automoc4
 USE_QT=		corelib dbus gui \
