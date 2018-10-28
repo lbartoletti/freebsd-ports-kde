@@ -11,7 +11,7 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt graphical user interface module
 
 DEPRECATED=		Qt4 has been EOL since december 2015
-EXPIRATION_DATE=	2018-03-15
+EXPIRATION_DATE=	2019-03-15
 
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libfontconfig.so:x11-fonts/fontconfig
