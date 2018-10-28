@@ -12,6 +12,9 @@ CATEGORIES=	multimedia
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Simple GUI based video editor
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 .include "${.CURDIR}/Makefile.common"
 
 .if ${PORT_OPTIONS:MGTK2} || ${PORT_OPTIONS:MQT4}

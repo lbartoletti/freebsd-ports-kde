@@ -14,6 +14,9 @@ COMMENT=	Cross-platform port of Arx Fatalis
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/ARX_PUBLIC_LICENSE.txt
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 LIB_DEPENDS=	libfreetype.so:print/freetype2
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/foreach.hpp:devel/boost-libs
 

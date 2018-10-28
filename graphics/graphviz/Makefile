@@ -13,6 +13,9 @@ COMMENT=	Graph Visualization Software from AT&T and Bell Labs
 LICENSE=	EPL
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 LIB_DEPENDS=	libltdl.so:devel/libltdl \
 		libpng.so:graphics/png \
 		libfreetype.so:print/freetype2 \

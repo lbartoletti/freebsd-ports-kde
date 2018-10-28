@@ -11,6 +11,9 @@ COMMENT=	GUI Front-End to the Fossil SCM tool
 
 LICENSE=	GPLv2
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 BUILD_DEPENDS=	bash:shells/bash
 RUN_DEPENDS=	fossil:devel/fossil
 

@@ -13,6 +13,9 @@ COMMENT=	Programming text editor
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 USES=		gmake iconv
 
 HAS_CONFIGURE=	yes

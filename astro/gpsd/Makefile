@@ -12,6 +12,9 @@ COMMENT=	Daemon that monitors one or more GPSes attached to a host computer
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 USES=		cpe pathfix pkgconfig python:2.7 scons shebangfix
 CPE_VENDOR=	gpsd_project
 USE_PYTHON=	flavors

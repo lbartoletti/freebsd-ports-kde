@@ -11,6 +11,9 @@ COMMENT=	Lightweight, flexible microblogging client
 
 LICENSE=	LGPL3
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	lyricat
 GH_PROJECT=	Hotot

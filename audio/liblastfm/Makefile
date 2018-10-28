@@ -13,6 +13,9 @@ COMMENT=	Qt C++ library for the Last.fm webservices
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 USES=		cmake pkgconfig 
 USE_GITHUB=	yes
 GH_ACCOUNT=	lastfm

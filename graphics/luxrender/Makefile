@@ -16,6 +16,9 @@ COMMENT=	Physically based and unbiased rendering system
 
 LICENSE=	GPLv3
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 LIB_DEPENDS=	${PY_BOOST} \
 		libfftw3.so:math/fftw3 \
 		libOpenImageIO.so:graphics/openimageio

@@ -11,6 +11,9 @@ COMMENT=	Cairo-Dock-Plugins for Cairo-Dock
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 RUN_DEPENDS=	wget:ftp/wget
 LIB_DEPENDS=	libgldi.so:deskutils/cairo-dock
 

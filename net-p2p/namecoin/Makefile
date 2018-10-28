@@ -12,6 +12,9 @@ COMMENT?=	Decentralized, open DNS and general purpose key/value store
 
 LICENSE=	MIT
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 LIB_DEPENDS=	libboost_date_time.so:devel/boost-libs \
 		libevent.so:devel/libevent
 

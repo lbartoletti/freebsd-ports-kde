@@ -12,6 +12,9 @@ PATCHFILES=	de3110c59874.patch:-p1
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Data viewing and plotting tool
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 LIB_DEPENDS=	libgsl.so:math/gsl \
 		libtiff.so:graphics/tiff
 

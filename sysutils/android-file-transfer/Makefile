@@ -11,6 +11,9 @@ COMMENT=	Android MTP client with minimalistic UI
 
 LICENSE=	GPLv3+
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	whoozle
 GH_PROJECT=	${PORTNAME}-linux

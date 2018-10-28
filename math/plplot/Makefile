@@ -12,6 +12,9 @@ COMMENT=	Scientific plotting package
 
 LICENSE=	LGPL21+
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 BUILD_DEPENDS=	bash:shells/bash \
 		${FREEFONT_DIR}/FreeMono.ttf:x11-fonts/freefont-ttf
 LIB_DEPENDS=	libLASi.so:devel/lasi \

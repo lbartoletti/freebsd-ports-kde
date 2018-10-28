@@ -12,6 +12,9 @@ COMMENT=	Simple notes managment application based on Qt
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 FLAVORS=	qt4 qt5
 FLAVOR?=	${FLAVORS:[1]}
 

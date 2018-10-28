@@ -11,6 +11,9 @@ COMMENT=	Software implementation of the OpenAL specification
 LICENSE=	LGPL20+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 CONFLICTS=	openal-200[0-9]*
 
 USES=		cmake:outsource compiler:c11 tar:bzip2

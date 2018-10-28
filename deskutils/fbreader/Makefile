@@ -12,6 +12,9 @@ COMMENT=	Powerful e-book reader
 
 LICENSE=	GPLv2+
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libexpat.so:textproc/expat2 \
 		libfribidi.so:converters/fribidi \

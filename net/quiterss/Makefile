@@ -13,6 +13,9 @@ COMMENT=	Open-source cross-platform RSS/Atom news feeds reader
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 NO_WRKSUBDIR=	yes
 
 USES=		desktop-file-utils pkgconfig qmake:outsource sqlite

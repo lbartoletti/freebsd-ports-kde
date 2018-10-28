@@ -11,6 +11,9 @@ COMMENT=	Sega Saturn system emulator
 
 LICENSE=	GPLv2+
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 USES=		cmake dos2unix openal:soft pkgconfig
 DOS2UNIX_FILES=	src/qt/YabauseThread.cpp src/core.h
 USE_XORG=	xmu xrandr

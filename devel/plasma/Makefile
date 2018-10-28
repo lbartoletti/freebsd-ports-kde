@@ -10,6 +10,9 @@ COMMENT=	Interactive disassembler for x86/ARM/MIPS
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 BUILD_DEPENDS=	bash:shells/bash \
 		binutils>=2:devel/binutils \
 		capstone>=3:devel/capstone3

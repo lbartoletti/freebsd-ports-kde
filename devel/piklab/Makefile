@@ -12,6 +12,9 @@ COMMENT=	KDE/Qt IDE for microcontroller development
 
 LICENSE=	GPLv2+
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 DOS2UNIX_FILES=	cmake/Piklab.cmake
 USE_QT=		corelib gui qt3support qtestlib xml \
 		moc_build qmake_build rcc_build uic_build

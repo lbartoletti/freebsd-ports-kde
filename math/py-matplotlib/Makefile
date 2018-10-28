@@ -16,6 +16,9 @@ COMMENT=	Plotting library uses a syntax familiar to MATLAB users
 
 LICENSE=	PSFL
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 BUILD_DEPENDS=	${PYNUMPY}
 LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libpng.so:graphics/png \

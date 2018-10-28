@@ -9,6 +9,9 @@ MASTER_SITES=	${STRIGI_MASTER_SITES}
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Strigi desktop search: Qt4 GUI
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 LIB_DEPENDS=	libstreams.so:deskutils/libstreams \
 		libstreamanalyzer.so:deskutils/libstreamanalyzer \
 		libsearchclient.so:deskutils/strigidaemon

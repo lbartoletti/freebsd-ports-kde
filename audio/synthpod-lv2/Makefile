@@ -13,6 +13,9 @@ COMMENT=	Lightweight Nonlinear LV2 Plugin Container
 LICENSE=	ART20
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 BUILD_DEPENDS=	lv2>0:audio/lv2
 LIB_DEPENDS=	liblilv-0.so:audio/lilv \
 		libserd-0.so:devel/serd \

@@ -21,6 +21,9 @@ COMMENT=	Flexible Input Method Framework
 
 LICENSE=	GPLv2
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:misc/iso-codes
 LIB_DEPENDS=	libcairo.so:graphics/cairo \
 		libdbus-1.so:devel/dbus \

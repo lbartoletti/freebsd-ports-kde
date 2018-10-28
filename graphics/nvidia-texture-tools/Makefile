@@ -12,6 +12,9 @@ COMMENT=	Texture Tools with support for DirectX 10 texture formats
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/NVIDIA_Texture_Tools_LICENSE.txt
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libtiff.so:graphics/tiff \
 		libIlmImf.so:graphics/openexr

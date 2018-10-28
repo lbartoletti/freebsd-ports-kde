@@ -12,6 +12,9 @@ COMMENT=	Adwaita theme for Qt applications
 LICENSE=	GPLv2 LGPL20
 LICENSE_COMB=	multi
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 FLAVORS=	qt5 qt4
 FLAVOR?=	${FLAVORS:[1]}
 qt4_PKGNAMESUFFIX=	4

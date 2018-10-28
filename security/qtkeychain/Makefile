@@ -13,6 +13,9 @@ COMMENT=	Platform independent Qt API for storing passwords
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 FLAVORS=	qt4 qt5
 FLAVOR?=	${FLAVORS:[1]}
 

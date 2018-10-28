@@ -13,6 +13,9 @@ COMMENT?=	Collection of simple PIN or passphrase entry dialogs
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 USES=		tar:bzip2
 
 .if !defined(PINENTRY_GUI)

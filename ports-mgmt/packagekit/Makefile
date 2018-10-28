@@ -11,6 +11,9 @@ MASTER_SITES=	http://www.packagekit.org/releases/
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT?=	DBUS packaging abstraction layer
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 BUILD_DEPENDS=	${LOCALBASE}/bin/docbook2man:textproc/docbook-utils
 LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib \
 		libpolkit-gobject-1.so:sysutils/polkit \

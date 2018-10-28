@@ -13,6 +13,9 @@ COMMENT=	General purpose music editor and sequencer suite
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 BUILD_DEPENDS=	dssi_osc_update:audio/dssi \
 		${LOCALBASE}/include/fftw3.h:math/fftw3
 LIB_DEPENDS=	libasound.so:audio/alsa-lib \

@@ -12,6 +12,9 @@ COMMENT?=	OpenImageIO graphics library
 
 LICENSE=	BSD3CLAUSE
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 		libImath.so:graphics/ilmbase \
 		libIlmImf.so:graphics/openexr \

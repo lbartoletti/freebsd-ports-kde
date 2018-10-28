@@ -10,6 +10,9 @@ MASTER_SITES=	http://www.usermode.org/code/
 MAINTAINER=	david@usermode.org
 COMMENT=	Homebrewer's recipe calculator
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 USES=		qmake qt:4
 USE_QT=		moc_build uic_build rcc_build xml gui
 PORTDOCS=	*

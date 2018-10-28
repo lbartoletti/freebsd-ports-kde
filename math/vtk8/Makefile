@@ -13,6 +13,9 @@ COMMENT=	Visualization toolkit
 
 LICENSE=	BSD3CLAUSE
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 LIB_DEPENDS=	libtiff.so:graphics/tiff \
 		libpng.so:graphics/png \
 		libfreetype.so:print/freetype2 \

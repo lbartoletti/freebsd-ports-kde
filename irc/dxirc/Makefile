@@ -11,6 +11,9 @@ COMMENT=	Simple IRC client
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 USE_XORG=	ice sm x11 xext
 USES=		cmake pkgconfig
 INSTALLS_ICONS=	yes

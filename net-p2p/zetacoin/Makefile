@@ -12,6 +12,9 @@ COMMENT=	Peer-to-Peer crypto currency with quick transactions
 
 LICENSE=	MIT
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 LIB_DEPENDS=	libboost_date_time.so:devel/boost-libs
 
 USES+=		autoreconf compiler:c++0x gmake libtool pkgconfig:build ssl

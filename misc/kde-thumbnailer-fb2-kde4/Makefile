@@ -11,6 +11,9 @@ DISTNAME=	160180-${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	KDE thumbnail generator for fb2 files
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 USES=		cmake:outsource kde:4 qt:4
 USE_KDE=	kdelibs automoc4
 USE_QT=		moc_build qmake_build rcc_build uic_build

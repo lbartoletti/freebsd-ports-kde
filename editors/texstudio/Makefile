@@ -10,6 +10,9 @@ COMMENT=	Integrated writing environment for LaTeX documents
 
 LICENSE=	GPLv2
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 BROKEN_aarch64=		fails to compile: error: no member named mc_eip in __mcontext
 BROKEN_armv6=		fails to compile: error: no member named mc_eip in __mcontext
 

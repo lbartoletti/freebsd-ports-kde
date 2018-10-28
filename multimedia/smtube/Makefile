@@ -12,6 +12,9 @@ COMMENT=	SMPlayer YouTube browser
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/Copying.txt
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 USES=		gmake tar:bzip2
 
 ALL_TARGET=	#empty

@@ -13,6 +13,9 @@ COMMENT=	Toolkit to explore video and human-computer interaction
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING.LESSER
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 LIB_DEPENDS=	libexif.so:graphics/libexif \
 		libpng.so:graphics/png \
 		libfreetype.so:print/freetype2 \

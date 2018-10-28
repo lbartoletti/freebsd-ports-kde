@@ -12,6 +12,9 @@ COMMENT=	QXmpp is an xmpp client library based on Qt & C++
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE.LGPL
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 CONFLICTS?=	${PORTNAME}-qt5-[0-9]*
 
 USES=		qmake pathfix pkgconfig libtool

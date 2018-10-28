@@ -12,6 +12,9 @@ COMMENT=	Graphical YubiKey personalization tool
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 LIB_DEPENDS=	libykpers-1.so:security/ykpers \
 		libyubikey.so:security/libyubikey
 

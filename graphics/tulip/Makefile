@@ -13,6 +13,9 @@ COMMENT=	System dedicated to the visualization of huge graphs
 
 LICENSE=	LGPL3
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 LIB_DEPENDS=	libquazip.so:archivers/quazip@qt4 \
 		libpng.so:graphics/png \
 		libOGDF.so:math/ogdf \

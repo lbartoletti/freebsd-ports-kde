@@ -12,6 +12,9 @@ COMMENT=	Libraries and utilities to access Quantis devices
 
 LICENSE=	BSD3CLAUSE GPLv2
 LICENSE_COMB=	dual
+
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
 LICENSE_FILE_BSD3CLAUSE=${WRKSRC}/../License.txt
 
 BROKEN_aarch64=		fails to build: Could not find JNI (missing: JAVA_AWT_LIBRARY JAVA_JVM_LIBRARY)

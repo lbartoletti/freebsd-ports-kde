@@ -10,6 +10,9 @@ COMMENT=	Simple and powerful Qt-based text editor
 
 LICENSE=	GPLv3
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 BROKEN_powerpc64=	fails to link: spellchecker.o:(.text+0xd2c): undefined reference to Hunspell::remove(std::string const&)
 
 USES=		gl pkgconfig:build qmake

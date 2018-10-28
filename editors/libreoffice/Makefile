@@ -13,6 +13,9 @@ EXTRACT_ONLY:=	${DISTFILES}
 
 COMMENT=	Full integrated office productivity suite
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 BUILD_DEPENDS=	p5-Archive-Zip>=0:archivers/p5-Archive-Zip \
 		zip:archivers/zip \
 		${LOCALBASE}/include/sqlext.h:databases/unixODBC \

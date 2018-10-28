@@ -14,6 +14,9 @@ COMMENT=	Mesh and field I/O library and scientific database
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 USES=		gmake libtool readline
 USE_LDCONFIG=	yes
 

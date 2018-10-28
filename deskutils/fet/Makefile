@@ -15,6 +15,9 @@ COMMENT=	Free timetabling software
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 USES=		compiler:c++14-lang qmake tar:bzip2
 USE_CXXSTD=	c++14
 

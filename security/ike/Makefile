@@ -11,6 +11,9 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-release
 MAINTAINER=	mgrooms@shrew.net
 COMMENT=	Shrew Soft IKE daemon and client tools
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 ONLY_FOR_ARCHS=	i386 amd64
 
 USE_RC_SUBR=	iked

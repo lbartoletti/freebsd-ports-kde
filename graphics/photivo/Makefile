@@ -15,6 +15,9 @@ COMMENT=	Free and open source photo processor
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 LIB_DEPENDS=	liblcms2.so:graphics/lcms2 \
 		libexiv2.so:graphics/exiv2 \
 		liblqr-1.so:graphics/liblqr-1 \

@@ -12,6 +12,9 @@ COMMENT=	MIDI playback, recording, and live performance tool
 
 LICENSE=	BSD2CLAUSE
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 BUILD_DEPENDS=	libumidi>=2.0.14:audio/libumidi
 LIB_DEPENDS=	libumidi20.so:audio/libumidi
 

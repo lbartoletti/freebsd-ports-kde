@@ -12,6 +12,9 @@ COMMENT=	ZBar barcode reader
 
 LICENSE=	LGPL21
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USES=		iconv jpeg libtool gmake pathfix pkgconfig

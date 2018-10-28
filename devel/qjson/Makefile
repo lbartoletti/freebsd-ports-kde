@@ -12,6 +12,9 @@ COMMENT=	Library to manage JSON objects with Qt
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING.lib
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 FLAVORS=	qt4 qt5
 FLAVOR?=	${FLAVORS:[1]}
 

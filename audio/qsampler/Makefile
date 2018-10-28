@@ -12,6 +12,9 @@ COMMENT=	Qt-based front end to LinuxSampler
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 LIB_DEPENDS=	libgig.so:audio/libgig \
 		liblscp.so:audio/liblscp
 RUN_DEPENDS=	linuxsampler:audio/linuxsampler

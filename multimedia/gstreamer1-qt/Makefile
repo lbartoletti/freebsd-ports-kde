@@ -11,6 +11,9 @@ DISTNAME=	qt-gstreamer-${PORTVERSION}
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt ${FLAVOR:C/qt//} bindings for GStreamer 1.x multimedia library
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 		libgstreamer-1.0.so:multimedia/gstreamer1
 

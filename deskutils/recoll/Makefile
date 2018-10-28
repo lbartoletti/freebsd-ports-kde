@@ -13,6 +13,9 @@ COMMENT=	Personal full text search package, based on Xapian
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 LIB_DEPENDS=	libxapian.so:databases/xapian-core
 RUN_DEPENDS=	unrar:archivers/unrar \
 		antiword:textproc/antiword \

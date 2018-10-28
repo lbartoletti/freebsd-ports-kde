@@ -11,6 +11,9 @@ COMMENT=	Qt-based GUI tool for creating and editing .torrent files
 
 LICENSE=	GPLv3
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 USES=		cmake compiler:c++11-lang desktop-file-utils
 
 _QT4_DEPS=	linguisttools_build moc_build qmake_build rcc_build \

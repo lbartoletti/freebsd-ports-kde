@@ -13,6 +13,9 @@ COMMENT=	Customizable ANSI Code Converter
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 USES=		compiler:c++11-lib gmake tar:bzip2
 MAKEFILE=	makefile
 

@@ -15,6 +15,9 @@ COMMENT=	GNU project to create a free Java class library
 
 LICENSE=	GPLv2
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 BROKEN_aarch64=		fails to configure: error: The jar tool /usr/local/bin/gjar5 was not found
 BROKEN_armv6=		fails to configure: error: The jar tool /usr/local/bin/gjar5 was not found
 BROKEN_armv7=		fails to configure: error: The jar tool /usr/local/bin/gjar5 was not found

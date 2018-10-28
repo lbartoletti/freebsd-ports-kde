@@ -12,6 +12,9 @@ COMMENT=	RSerPool Framework and Example Applications
 
 LICENSE=	GPLv3
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 BROKEN_aarch64=		fails to compile: fractalgeneratorservice.cc:353:12: expected unqualified-id
 BROKEN_armv6=		fails to compile: fractalgeneratorservice.cc:353:12: expected unqualified-id
 BROKEN_armv7=		fails to compile: fractalgeneratorservice.cc:353:12: expected unqualified-id

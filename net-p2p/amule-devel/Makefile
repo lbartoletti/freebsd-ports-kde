@@ -15,6 +15,9 @@ COMMENT=	All-platform eMule p2p client
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 LIB_DEPENDS=	libcryptopp.so:security/cryptopp
 
 CONFLICTS=	amule-[0-9]*

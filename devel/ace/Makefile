@@ -16,6 +16,9 @@ LICENSE_NAME=	ACE
 LICENSE_FILE=	${WRKSRC}/COPYING
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 BROKEN_aarch64=		Fails to link: missing sbrk
 BROKEN_powerpc=		Does not compile on ${ARCH}
 BROKEN_powerpc64=	Does not build on ${ARCH}: undefined reference to fmodl

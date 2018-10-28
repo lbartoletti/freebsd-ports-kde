@@ -12,6 +12,9 @@ COMMENT=	Complete front-end based on Qt for mplayer
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/Copying.txt
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 USES=		cpe desktop-file-utils dos2unix gmake qmake tar:bzip2
 USE_XORG=	x11
 

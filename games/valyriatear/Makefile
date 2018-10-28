@@ -14,6 +14,9 @@ COMMENT=	Open Source J-RPG based on the Hero of Allacrost engine
 # GPLv2, GPLv3 (with font exception), OFL-1.1, CC0, CC-BY-3, and CC-BY-SA-3.
 LICENSE=	GPLv2
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 		libvorbis.so:audio/libvorbis \
 		libpng.so:graphics/png

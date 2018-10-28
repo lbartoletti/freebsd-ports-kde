@@ -11,6 +11,9 @@ DISTNAME=	50971-${PORTNAME}-${PORTVERSION}
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	KDE 4 version of ssh-askpass with KWallet support
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USES=		cmake kde:4 qt:4
 USE_KDE=	kdelibs automoc4
