@@ -14,9 +14,6 @@ COMMENT=	Simple SMTP proxy and store-and-forward MTA
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-DEPRECATED=		Qt4 has been EOL since december 2015
-EXPIRATION_DATE=	2019-03-15
-
 USES=		autoreconf pkgconfig
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	e_spooldir=${PREFIX}/var/spool/emailrelay
@@ -41,6 +38,13 @@ OPENSSL_LDFLAGS=	-L${OPENSSLLIB}
 OPENSSL_CPPFLAGS=	-I${OPENSSLINC}
 
 IPV6_CONFIGURE_ENABLE=	ipv6
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MGUI}
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+.endif
 
 post-install:
 	${MV} ${STAGEDIR}${PREFIX}/etc/emailrelay.auth.template \

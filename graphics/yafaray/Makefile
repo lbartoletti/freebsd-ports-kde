@@ -12,9 +12,6 @@ COMMENT=	Montecarlo raytracing engine
 
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	dual
-
-DEPRECATED=		Qt4 has been EOL since december 2015
-EXPIRATION_DATE=	2019-03-15
 LICENSE_FILE_GPLv2=	${WRKSRC}/LICENSES
 LICENSE_FILE_LGPL21=	${WRKSRC}/LICENSES
 
@@ -47,6 +44,13 @@ QT_DESC=	Enable Qt Gui build
 QT_USES=	qt:4
 QT_CMAKE_BOOL=	WITH_QT
 QT_USE=		QT=corelib,gui,moc_build,qmake_build,rcc_build,uic_build
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MQT}
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+.endif
 
 post-install:
 	@${RM} ${STAGEDIR}${DOCSDIR}/LICENSES

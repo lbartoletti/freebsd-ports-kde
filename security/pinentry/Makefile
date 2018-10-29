@@ -13,9 +13,6 @@ COMMENT?=	Collection of simple PIN or passphrase entry dialogs
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-DEPRECATED=		Qt4 has been EOL since december 2015
-EXPIRATION_DATE=	2019-03-15
-
 USES=		tar:bzip2
 
 .if !defined(PINENTRY_GUI)
@@ -65,6 +62,11 @@ GNOME3_RUN_DEPENDS=	${PINENTRY_GNOME3}:security/pinentry-gnome3
 PINENTRY_BIN=	${PINENTRY_${gui}}
 . endif
 .endfor
+
+.if ${PORT_OPTIONS:MQT4}
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+.endif
 
 do-install:
 	${LN} -sf ${PINENTRY_BIN} ${STAGEDIR}${PREFIX}/bin/pinentry

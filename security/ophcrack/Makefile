@@ -12,9 +12,6 @@ COMMENT=	Windows password cracker based on rainbow tables
 LICENSE=	APACHE20 GPLv2
 LICENSE_COMB=	multi
 
-DEPRECATED=		Qt4 has been EOL since december 2015
-EXPIRATION_DATE=	2019-03-15
-
 LIB_DEPENDS=	libexpat.so:textproc/expat2
 
 USES=		gmake localbase ssl tar:bzip2
@@ -36,6 +33,13 @@ X11_CONFIGURE_OFF=	--disable-gui
 
 GRAPH_LIB_DEPENDS=	libqwt.so:x11-toolkits/qwt5
 GRAPH_CONFIGURE_OFF=	--disable-graph
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MX11}
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -E '/#include <byteswap\.h>/d ; \

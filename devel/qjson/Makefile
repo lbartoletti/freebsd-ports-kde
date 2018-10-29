@@ -11,6 +11,7 @@ COMMENT=	Library to manage JSON objects with Qt
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING.lib
+
 FLAVORS=	qt4 qt5
 FLAVOR?=	${FLAVORS:[1]}
 

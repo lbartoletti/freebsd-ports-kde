@@ -13,9 +13,6 @@ EXTRACT_ONLY:=	${DISTFILES}
 
 COMMENT=	Full integrated office productivity suite
 
-DEPRECATED=		Qt4 has been EOL since december 2015
-EXPIRATION_DATE=	2019-03-15
-
 BUILD_DEPENDS=	p5-Archive-Zip>=0:archivers/p5-Archive-Zip \
 		zip:archivers/zip \
 		${LOCALBASE}/include/sqlext.h:databases/unixODBC \
@@ -279,6 +276,13 @@ MAKE_ENV+=	CXXFLAGS_WARN="${CXXFLAGS_WARN}"
 MAKE_ENV+=	GNUSED=${LOCALBASE}/bin/gsed
 MAKE_ENV+=	DISPLAY=
 MAKE_ENV+=	verbose=1
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MKDE4}
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+.endif
 
 .include <bsd.port.pre.mk>
 

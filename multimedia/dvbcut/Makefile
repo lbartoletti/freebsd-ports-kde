@@ -11,9 +11,6 @@ COMMENT=	Qt application for cutting of MPEG PS and MPEG TS streams (DVB)
 
 LICENSE=	GPLv2
 
-DEPRECATED=		Qt4 has been EOL since december 2015
-EXPIRATION_DATE=	2019-03-15
-
 BUILD_DEPENDS=	mplayer:multimedia/mplayer \
 		ffmpeg:multimedia/ffmpeg
 LIB_DEPENDS=	liba52.so:audio/liba52 \
@@ -45,6 +42,13 @@ QT4_USES=	qt:4
 QT4_USE=	QT=corelib,gui,xml,qt3support,linguisttools_build,moc_build,rcc_build,uic_build
 QT5_USES=	qt:5
 QT5_USE=	QT=core,gui,widgets,xml,buildtools_build,linguisttools_build GL=gl
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MQT4}
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+.endif
 
 post-build:
 		@${SED} -e 's;@prefix@;${PREFIX};' \

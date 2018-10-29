@@ -12,10 +12,6 @@ COMMENT=	Graph Visualization Software from AT&T and Bell Labs
 
 LICENSE=	EPL
 LICENSE_FILE=	${WRKSRC}/COPYING
-
-DEPRECATED=		Qt4 has been EOL since december 2015
-EXPIRATION_DATE=	2019-03-15
-
 LIB_DEPENDS=	libltdl.so:devel/libltdl \
 		libpng.so:graphics/png \
 		libfreetype.so:print/freetype2 \
@@ -213,6 +209,11 @@ CONFIGURE_ENV+=		SWIG="${LOCALBASE}/bin/swig3.0"
 .else
 CONFIGURE_ARGS+=	--disable-swig
 CONFIGURE_ENV+=		SWIG="/nonexistent"
+.endif
+
+.if ${PORT_OPTIONS:MGVEDIT}
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
 .endif
 
 .include <bsd.port.pre.mk>

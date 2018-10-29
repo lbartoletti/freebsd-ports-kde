@@ -13,7 +13,6 @@ COMMENT=	Personal full text search package, based on Xapian
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-
 LIB_DEPENDS=	libxapian.so:databases/xapian-core
 RUN_DEPENDS=	unrar:archivers/unrar \
 		antiword:textproc/antiword \

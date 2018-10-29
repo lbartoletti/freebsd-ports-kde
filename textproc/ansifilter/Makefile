@@ -13,9 +13,6 @@ COMMENT=	Customizable ANSI Code Converter
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-DEPRECATED=		Qt4 has been EOL since december 2015
-EXPIRATION_DATE=	2019-03-15
-
 USES=		compiler:c++11-lib gmake tar:bzip2
 MAKEFILE=	makefile
 
@@ -34,6 +31,9 @@ QT4_DESKTOP_ENTRIES=	"ANSIFilter" "" "" "${PORTNAME}-gui" \
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MQT4}
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 CONFIGURE_WRKSRC=	${WRKSRC}/src/qt-gui
 QMAKE_SOURCE_PATH=	${CONFIGURE_WRKSRC}/${PORTNAME}-gui.pro
 .endif
