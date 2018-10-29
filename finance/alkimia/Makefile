@@ -12,9 +12,6 @@ COMMENT=	KDE financial data handling library
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING.LIB
 
-DEPRECATED=		Qt4 has been EOL since december 2015
-EXPIRATION_DATE=	2019-03-15
-
 # Depending on ecm via USE_KDE causes unwanted CMAKE_ARGS to be set
 BUILD_DEPENDS=	${LOCALBASE}/share/ECM/cmake/ECMConfig.cmake:devel/kf5-extra-cmake-modules
 
@@ -23,6 +20,9 @@ USE_LDCONFIG=	yes
 
 SLAVE?=		qt5
 .if ${SLAVE} ==	qt4
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 USES+=		qt:4
 USE_QT=		corelib dbus \
 		moc_build qmake_build rcc_build

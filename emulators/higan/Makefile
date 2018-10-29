@@ -12,9 +12,6 @@ DISTNAME=	${PORTNAME}_v${PORTVERSION}-source
 MAINTAINER=	cyberbotx@cyberbotx.com
 COMMENT=	Nintendo multi-system emulator
 
-DEPRECATED=		Qt4 has been EOL since december 2015
-EXPIRATION_DATE=	2019-03-15
-
 ONLY_FOR_ARCHS=	amd64 i386
 
 USES=		7z:p7zip compiler:c++14-lang gmake pkgconfig
@@ -78,6 +75,13 @@ INPUT_SDL_USE=	SDL=sdl
 INPUT_SDL_VARS=	INPUT_DRIVER+=input.sdl
 
 INPUT_X_VARS=	INPUT_DRIVER+=input.xlib
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MQT4}
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+.endif
 
 post-patch:
 	${REINPLACE_CMD} \

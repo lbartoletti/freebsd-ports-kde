@@ -13,9 +13,6 @@ DISTNAME=	thrift-${PORTVERSION}
 MAINTAINER=	komarov@valerka.net
 COMMENT=	C++ interface to Thrift
 
-DEPRECATED=		Qt4 has been EOL since december 2015
-EXPIRATION_DATE=	2019-03-15
-
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 		libevent.so:devel/libevent
 
@@ -56,6 +53,13 @@ CONFIGURE_ARGS+=	\
 
 LDFLAGS+=	-L${OPENSSLLIB}
 CFLAGS+=	-I${OPENSSLINC}
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MMQT4}
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+.endif
 
 .include <bsd.port.pre.mk>
 

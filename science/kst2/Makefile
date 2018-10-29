@@ -12,9 +12,6 @@ PATCHFILES=	de3110c59874.patch:-p1
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Data viewing and plotting tool
 
-DEPRECATED=		Qt4 has been EOL since december 2015
-EXPIRATION_DATE=	2019-03-15
-
 LIB_DEPENDS=	libgsl.so:math/gsl \
 		libtiff.so:graphics/tiff
 
@@ -62,6 +59,13 @@ QT4_USE=	${_USE_QT4:S/^/QT=/}
 QT5_USES=	qt:5
 QT5_USE=	${_USE_QT5:S/^/QT=/}
 QT5_CMAKE_ON=	-Dkst_qt5=on
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MQT4}
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+.endif
 
 post-patch:
 	${REINPLACE_CMD} -e '/find_package(Getdata)/d' \

@@ -13,9 +13,6 @@ COMMENT=	Visualization toolkit
 
 LICENSE=	BSD3CLAUSE
 
-DEPRECATED=		Qt4 has been EOL since december 2015
-EXPIRATION_DATE=	2019-03-15
-
 LIB_DEPENDS=	libtiff.so:graphics/tiff \
 		libpng.so:graphics/png \
 		libfreetype.so:print/freetype2 \
@@ -125,6 +122,11 @@ post-patch:
 		${WRKSRC}/Rendering/OpenGL2/*.cxx # many files/places, see https://gitlab.kitware.com/vtk/vtk/issues/17179
 
 .include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MQT4}
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+.endif
 
 .for g in ${VTK_GROUPS}
 .  if ${PORT_OPTIONS:M${g}}

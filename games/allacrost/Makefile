@@ -14,9 +14,6 @@ COMMENT=	Single player 2D role-playing game
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-DEPRECATED=		Qt4 has been EOL since december 2015
-EXPIRATION_DATE=	2019-03-15
-
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libogg.so:audio/libogg \
 		libvorbis.so:audio/libvorbis \
@@ -48,6 +45,13 @@ EDITOR_USES=		qmake:no_env qt:4
 EDITOR_USE=		QT=corelib,gui,moc_build,opengl,qt3support
 EDITOR_CONFIGURE_ON=	--enable-editor=yes
 EDITOR_CONFIGURE_OFF=	--enable-editor=no
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MEDITOR}
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-I/usr/include/|-I${LOCALBASE}/include/|g' \

@@ -12,9 +12,6 @@ COMMENT=	Scientific plotting package
 
 LICENSE=	LGPL21+
 
-DEPRECATED=		Qt4 has been EOL since december 2015
-EXPIRATION_DATE=	2019-03-15
-
 BUILD_DEPENDS=	bash:shells/bash \
 		${FREEFONT_DIR}/FreeMono.ttf:x11-fonts/freefont-ttf
 LIB_DEPENDS=	libLASi.so:devel/lasi \
@@ -110,6 +107,13 @@ WXGTK_CMAKE_ON=		-DwxWidgets_CONFIG_EXECUTABLE:FILEPATH="${WX_CONFIG}"
 
 X11_USE=		XORG=ice,sm,x11,xext
 X11_CMAKE_BOOL=		PLD_xcairo PLD_xwin
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MQT4}
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+.endif
 
 post-patch:
 	${REINPLACE_CMD} -e \

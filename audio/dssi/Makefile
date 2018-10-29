@@ -13,9 +13,6 @@ COMMENT=	API for audio processing plugins
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-DEPRECATED=		Qt4 has been EOL since december 2015
-EXPIRATION_DATE=	2019-03-15
-
 BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:audio/ladspa
 LIB_DEPENDS=	libdssialsacompat.so:audio/libdssialsacompat \
 		liblo.so:audio/liblo \
@@ -42,6 +39,13 @@ OPTIONS_SUB=	yes
 
 QT4_USES=	qmake:no_env qt:4
 QT4_USE=	QT=corelib,gui,moc_build
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MQT4}
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e \

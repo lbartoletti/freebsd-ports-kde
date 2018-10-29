@@ -12,9 +12,6 @@ COMMENT?=	Decentralized, open DNS and general purpose key/value store
 
 LICENSE=	MIT
 
-DEPRECATED=		Qt4 has been EOL since december 2015
-EXPIRATION_DATE=	2019-03-15
-
 LIB_DEPENDS=	libboost_date_time.so:devel/boost-libs \
 		libevent.so:devel/libevent
 
@@ -32,6 +29,9 @@ GH_TAGNAME=	a13a73b:graphics
 SLAVE_PORT?=	no
 
 .if defined(SLAVE_PORT) && ${SLAVE_PORT} == "no"
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 USES+=		desktop-file-utils qt:4
 USE_QT=		corelib gui moc_build linguisttools_build network qmake_build \
 		rcc_build uic_build xml

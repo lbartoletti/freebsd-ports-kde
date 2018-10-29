@@ -12,9 +12,6 @@ COMMENT=	Open Source Computer Vision library
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-DEPRECATED=		Qt4 has been EOL since december 2015
-EXPIRATION_DATE=	2019-03-15
-
 NOT_FOR_ARCHS=	sparc64
 NOT_FOR_ARCHS_REASON_sparc64=	does not compile on sparc64
 
@@ -330,6 +327,13 @@ CMAKE_ARGS+=	-DBUILD_opencv_${module}:BOOL=OFF
 
 .if !defined(OCV_JAVA)
 CMAKE_ARGS+=	-DBUILD_JAVA:BOOL=OFF
+.endif
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MQT4}
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
 .endif
 
 post-extract-EXTRA_MODULES-on:

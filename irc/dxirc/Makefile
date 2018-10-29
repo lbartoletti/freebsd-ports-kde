@@ -11,9 +11,6 @@ COMMENT=	Simple IRC client
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-DEPRECATED=		Qt4 has been EOL since december 2015
-EXPIRATION_DATE=	2019-03-15
-
 USE_XORG=	ice sm x11 xext
 USES=		cmake pkgconfig
 INSTALLS_ICONS=	yes
@@ -52,5 +49,12 @@ QT5_USES=	qt:5
 QT5_USE=		QT=core,gui,multimedia,network,widgets \
 			QT=buildtools_build,qmake_build
 QT5_CMAKE_ON=		-DQT5:BOOL=ON
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MQT4}
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+.endif
 
 .include <bsd.port.mk>

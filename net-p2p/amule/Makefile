@@ -13,9 +13,6 @@ COMMENT=	All-platform eMule p2p client
 
 LICENSE=	GPLv2+
 
-DEPRECATED=		Qt4 has been EOL since december 2015
-EXPIRATION_DATE=	2019-03-15
-
 LIB_DEPENDS=	libcryptopp.so:security/cryptopp
 
 CONFLICTS=	amule-devel-[0-9]*
@@ -109,6 +106,11 @@ XAS_CONFIGURE_ON=	--enable-xas
 XAS_USE=	PERL5+=run
 
 .include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MPLASMA_MULE}
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+.endif
 
 .if ${PORT_OPTIONS:MED2K}
 CONFLICTS+=		ed2k-hash*

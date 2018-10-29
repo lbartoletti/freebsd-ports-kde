@@ -12,9 +12,6 @@ COMMENT=	Texture Tools with support for DirectX 10 texture formats
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/NVIDIA_Texture_Tools_LICENSE.txt
 
-DEPRECATED=		Qt4 has been EOL since december 2015
-EXPIRATION_DATE=	2019-03-15
-
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libtiff.so:graphics/tiff \
 		libIlmImf.so:graphics/openexr
@@ -43,6 +40,13 @@ OPTIONS_SUB=	yes
 COMPRESSUI_DESC=Build compressor UI (requires Qt4)
 COMPRESSUI_USES=	qt:4
 COMPRESSUI_USE=	QT=qmake_build,moc_build,uic_build,rcc_build,corelib,gui,opengl
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MCOMPRESSUI}
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+.endif
 
 post-patch-COMPRESSUI-on:
 	@${REINPLACE_CMD} -e '/FIND_PACKAGE.*Qt4/ s|)$$| REQUIRED&|' \

@@ -15,9 +15,6 @@ COMMENT=	Free timetabling software
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-DEPRECATED=		Qt4 has been EOL since december 2015
-EXPIRATION_DATE=	2019-03-15
-
 USES=		compiler:c++14-lang qmake tar:bzip2
 USE_CXXSTD=	c++14
 
@@ -46,6 +43,13 @@ QT5_USE=	QT=buildtools_build,core,printsupport,widgets,xml GL=gl
 INSTALL_TARGET=	${WRKSRC}/fet-cl
 ONLYCL_VARS=	QMAKE_SOURCE_PATH=${WRKSRC}/src/src-cl.pro
 ONLYCL_VARS_OFF=	INSTALL_TARGET+=${WRKSRC}/fet USE_QT+="gui network"
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MQT4}
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/share/fet|${DATADIR}|g' \

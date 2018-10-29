@@ -11,9 +11,6 @@ COMMENT=	GUI Front-End to the Fossil SCM tool
 
 LICENSE=	GPLv2
 
-DEPRECATED=		Qt4 has been EOL since december 2015
-EXPIRATION_DATE=	2019-03-15
-
 BUILD_DEPENDS=	bash:shells/bash
 RUN_DEPENDS=	fossil:devel/fossil
 
@@ -30,6 +27,13 @@ QT5_USE=	QT=core,gui,network,webkit,widgets,buildtools_build,linguisttools_build
 SHEBANG_FILES=	intl/convert.sh
 PLIST_FILES=	bin/fuel share/applications/fuel.desktop \
 		share/icons/hicolor/256x256/apps/fuel.png
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MQT4}
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' \

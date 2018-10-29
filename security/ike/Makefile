@@ -11,8 +11,6 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-release
 MAINTAINER=	mgrooms@shrew.net
 COMMENT=	Shrew Soft IKE daemon and client tools
 
-DEPRECATED=		Qt4 has been EOL since december 2015
-EXPIRATION_DATE=	2019-03-15
 
 ONLY_FOR_ARCHS=	i386 amd64
 
@@ -42,6 +40,13 @@ NATT_CMAKE_ON=	-DNATT=YES
 QTGUI_CMAKE_ON=	-DQTGUI=YES
 QTGUI_USES=	qt:4
 QTGUI_USE=	QT=gui,moc_build,qmake_build,rcc_build,uic_build
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MQTGUI}
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+.endif
 
 post-install:
 	@if ! ${SYSCTL} -a | ${GREP} -q ipsec; then \

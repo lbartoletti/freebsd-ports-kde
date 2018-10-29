@@ -11,9 +11,6 @@ COMMENT=	Software implementation of the OpenAL specification
 LICENSE=	LGPL20+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-DEPRECATED=		Qt4 has been EOL since december 2015
-EXPIRATION_DATE=	2019-03-15
-
 CONFLICTS=	openal-200[0-9]*
 
 USES=		cmake:outsource compiler:c11 tar:bzip2
@@ -58,6 +55,13 @@ SDL_USE=		SDL=sdl2
 SNDIO_CMAKE_BOOL=	ALSOFT_REQUIRE_SNDIO ALSOFT_BACKEND_SNDIO
 SNDIO_IMPLIES=		OSS # provide fallback for missing sndio capture support
 SNDIO_LIB_DEPENDS=	libsndio.so:audio/sndio
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MCONFIG}
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} 's|/etc/openal|${ETCDIR}|' \

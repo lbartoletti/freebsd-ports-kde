@@ -15,9 +15,6 @@ COMMENT=	Documentation system for C, C++, and other languages
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-DEPRECATED=		Qt4 has been EOL since december 2015
-EXPIRATION_DATE=	2019-03-15
-
 USES=		bison cmake:outsource,noninja compiler:c++11-lang iconv python shebangfix
 ALL_TARGET=	all
 CMAKE_ARGS+=	-DDOC_INSTALL_DIR:PATH=${DOCSDIR_REL}
@@ -65,6 +62,13 @@ SEARCH_CMAKE_BOOL=	build_search
 SEARCH_LIB_DEPENDS=	libxapian.so:databases/xapian-core
 SEARCH_PLIST_FILES=	bin/doxyindexer \
 			bin/doxysearch.cgi
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MQT4}
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e '/PERL_PATH/ s|/usr/bin/perl|${perl_CMD}|' \

@@ -12,9 +12,6 @@ COMMENT=	ZBar barcode reader
 
 LICENSE=	LGPL21
 
-DEPRECATED=		Qt4 has been EOL since december 2015
-EXPIRATION_DATE=	2019-03-15
-
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USES=		iconv jpeg libtool gmake pathfix pkgconfig
@@ -55,6 +52,12 @@ QT4_CONFIGURE_OFF=	--with-qt=no
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+
+.include <bsd.port.options.mk>
+.if ${PORT_OPTIONS:MQT4}
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+.endif
 
 post-patch-DOCS-off:
 	@${REINPLACE_CMD} '/^install-data-am: /s/install-dist_docDATA//' \

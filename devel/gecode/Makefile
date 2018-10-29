@@ -13,9 +13,6 @@ COMMENT=	Generic Constraint Development Environment
 LICENSE=	BSL MIT
 LICENSE_COMB=	multi
 
-DEPRECATED=		Qt4 has been EOL since december 2015
-EXPIRATION_DATE=	2019-03-15
-
 NOT_FOR_ARCHS=		aarch64 armv6 armv7 mips mips64
 NOT_FOR_ARCHS_REASON=	needs code written to specify rounding control mechanism in Boost.Numeric.Interval
 
@@ -55,6 +52,11 @@ GIST_CONFIGURE_ON=	--enable-gist --enable-qt
 GIST_CONFIGURE_OFF=	--disable-gist --disable-qt
 
 .include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MGIST}
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+.endif
 
 .if ${ARCH} == "amd64"
 CFLAGS+=	-D__USE_ISOC99
