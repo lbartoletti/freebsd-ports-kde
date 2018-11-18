@@ -37,6 +37,8 @@ CONFLICTS=	kdevelop-kde4-4* kdevelop-4* kdevplatform-kde4-4* kdevplatform-4*
 SHEBANG_FILES=	kdevplatform/util/kdevplatform_shell_environment.sh \
 		kdevplatform/util/.zshrc
 
+CMAKE_ARGS=	-DCMAKE_POLICY_DEFAULT_CMP0074=NEW -DLLVM_ROOT=${LOCALBASE}/llvm${LLVM_VERSION}
+
 OPTIONS_DEFINE=	WEBENGINE
 WEBENGINE_DESC=	Use WebEngine as help reader
 WEBENGINE_USES=	qt:5
@@ -49,7 +51,5 @@ LLVM_VERSION?=	60
 SHEBANG_LANG=	zsh
 zsh_OLD_CMD=	/bin/zsh
 zsh_CMD=	${LOCALBASE}/bin/zsh
-
-CMAKE_ARGS=	-DCMAKE_POLICY_DEFAULT_CMP0074=NEW -DLLVM_ROOT=${LOCALBASE}/llvm${LLVM_VERSION}
 
 .include <bsd.port.mk>
