@@ -180,7 +180,7 @@ CONFIGURE_ARGS+=	-opensource -confirm-license \
 			-datadir ${PREFIX}/${QT_DATADIR_REL} \
 			-docdir ${PREFIX}/${QT_DOCDIR_REL} \
 			-translationdir ${PREFIX}/${QT_L10NDIR_REL} \
-			-sysconfdir ${PREFIX}/${QT_ETCDIR_REL}
+			-sysconfdir ${PREFIX}/${QT_ETCDIR_REL} \
 			-nomake examples -nomake tests \
 			-platform ${QMAKESPECNAME} \
 			-archdatadir ${PREFIX}/${QT_ARCHDIR_REL} \
