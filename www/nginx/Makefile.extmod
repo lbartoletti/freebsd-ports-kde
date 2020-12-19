@@ -8,7 +8,7 @@ ARRAYVAR_IMPLIES=	DEVEL_KIT
 ARRAYVAR_GH_TUPLE=	openresty:array-var-nginx-module:v0.05:arrayvar
 ARRAYVAR_VARS=		DSO_EXTMODS+=arrayvar
 
-AWS_AUTH_GH_TUPLE=	anomalizer:ngx_aws_auth:75c94e6:aws_auth
+AWS_AUTH_GH_TUPLE=	anomalizer:ngx_aws_auth:692263b:aws_auth
 AWS_AUTH_VARS=		DSO_EXTMODS+=aws_auth
 
 BROTLI_LIB_DEPENDS=	libbrotlicommon.so:archivers/brotli
@@ -65,7 +65,7 @@ GRIDFS_GH_TUPLE=	technowledgy:nginx_http_gridfs_module:7970bab:gridfs \
 			10gen-archive:mongo-c-driver-legacy:f06669b:mongo_c
 GRIDFS_VARS=		DSO_EXTMODS+=gridfs
 
-HEADERS_MORE_GH_TUPLE=		openresty:headers-more-nginx-module:085fbbc:headers_more
+HEADERS_MORE_GH_TUPLE=		openresty:headers-more-nginx-module:d6d7eba:headers_more
 HEADERS_MORE_VARS=		DSO_EXTMODS+=headers_more
 
 HTTP_ACCEPT_LANGUAGE_GH_TUPLE=	dvershinin:nginx_accept_language_module:5683967:accept_language
@@ -97,14 +97,14 @@ HTTP_DAV_EXT_VARS=		DSO_EXTMODS+=dav_ext
 HTTP_EVAL_GH_TUPLE=		openresty:nginx-eval-module:582bd25:eval
 HTTP_EVAL_VARS=			DSO_EXTMODS+=eval
 
-HTTP_FANCYINDEX_GH_TUPLE=	aperezdc:ngx-fancyindex:v0.4.3:fancyindex
+HTTP_FANCYINDEX_GH_TUPLE=	aperezdc:ngx-fancyindex:v0.5.1:fancyindex
 HTTP_FANCYINDEX_VARS=		DSO_EXTMODS+=fancyindex
 
 HTTP_FOOTER_GH_TUPLE=		alibaba:nginx-http-footer-filter:1.2.2:footer
 HTTP_FOOTER_VARS=		DSO_EXTMODS+=footer
 HTTP_FOOTER_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-nginx-http-footer-filter-config
 
-HTTP_GEOIP2_GH_TUPLE=		leev:ngx_http_geoip2_module:3.2:geoip2
+HTTP_GEOIP2_GH_TUPLE=		leev:ngx_http_geoip2_module:3.3:geoip2
 HTTP_GEOIP2_CFLAGS=		-I${LOCALBASE}/include
 HTTP_GEOIP2_VARS=		DSO_EXTMODS+=geoip2
 HTTP_GEOIP2_LIB_DEPENDS=	libmaxminddb.so:net/libmaxminddb

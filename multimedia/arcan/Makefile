@@ -1,18 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	arcan
-DISTVERSION=	0.6.0
-PORTREVISION=	1
+DISTVERSION=	0.6.0.1
 CATEGORIES=	multimedia
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	7cf3d1066faf.patch:-p2 # https://github.com/letoram/arcan/pull/205
-PATCHFILES+=	f40395b6755d.patch:-p2 # https://github.com/letoram/arcan/pull/205
-PATCHFILES+=	b519eb023e20.patch:-p2 # https://github.com/letoram/arcan/pull/205
-PATCHFILES+=	d6b52b1b3601.patch:-p2 # https://github.com/letoram/arcan/pull/205
-PATCHFILES+=	d8a262d6d19a.patch:-p2 # https://github.com/letoram/arcan/pull/205
-PATCHFILES+=	f724b748cc72.patch:-p2 # https://github.com/letoram/arcan/pull/205
-PATCHFILES+=	06ca1fd319bf.patch:-p2 # https://github.com/letoram/arcan/pull/209
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Display Server, Multimedia Framework, Game Engine
@@ -39,8 +29,8 @@ CMAKE_ARGS=	-DENGINE_BUILDTAG:STRING="${DISTVERSIONFULL}"
 LDFLAGS+=	-Wl,--as-needed # bzip2, ffmpeg, librt, libutil, lzma, zlib
 LDFLAGS_i386=	-Wl,-z,notext
 
-OPTIONS_DEFINE=	ESPEAK FFMPEG LUAJIT SDL TESSERACT UVC VLC VNC WAYLAND
-OPTIONS_DEFAULT=ESPEAK FFMPEG LUAJIT SDL TESSERACT UVC VLC VNC WAYLAND
+OPTIONS_DEFINE=	ESPEAK FFMPEG LUAJIT SDL SUID TESSERACT UVC VLC VNC WAYLAND
+OPTIONS_DEFAULT=ESPEAK FFMPEG LUAJIT SDL SUID TESSERACT UVC VLC VNC WAYLAND
 OPTIONS_EXCLUDE_aarch64=	LUAJIT # bug 225342
 OPTIONS_EXCLUDE_powerpc64=	LUAJIT
 OPTIONS_SUB=	yes
@@ -58,6 +48,10 @@ LUAJIT_CMAKE_BOOL_OFF=	DISABLE_JIT
 SDL_USES=		sdl
 SDL_USE=		SDL=sdl2
 SDL_CMAKE_BOOL=		HYBRID_SDL
+
+SUID_DESC=		setuid bit on "${PORTNAME}" binary
+SUID_PLIST_SUB=		MAYBE_SUID="@(,,4755) "
+SUID_PLIST_SUB_OFF=	MAYBE_SUID="@(,,0755) "
 
 TESSERACT_DESC=		Optical Character Recognition via Tesseract
 TESSERACT_LIB_DEPENDS=	libtesseract.so:graphics/tesseract

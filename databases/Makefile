@@ -660,6 +660,7 @@
     SUBDIR += postgis24
     SUBDIR += postgis25
     SUBDIR += postgis30
+    SUBDIR += postgis31
     SUBDIR += postgresql-cstore_fdw
     SUBDIR += postgresql-jdbc
     SUBDIR += postgresql-libpgeasy
@@ -831,7 +832,6 @@
     SUBDIR += py-sqlobject
     SUBDIR += py-sqlparse
     SUBDIR += py-sqlrelay
-    SUBDIR += py-swift
     SUBDIR += py-tableschema
     SUBDIR += py-tarantool
     SUBDIR += py-tiledb

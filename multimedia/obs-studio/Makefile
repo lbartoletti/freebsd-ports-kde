@@ -1,11 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	obs-studio
-DISTVERSION=	26.1.0-rc2
+DISTVERSION=	26.1.0
 CATEGORIES=	multimedia
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES=	2335d5d5f205ae05ccf215efeb71c9ee8d402341.patch:-p1 # patch removing strerror_l that is missing in FreeBSD, see bug#251651
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Open source streaming/recording software
@@ -58,6 +55,7 @@ LDFLAGS+=	-fPIC # pending https://github.com/obsproject/obs-studio/issues/3436
 .include <bsd.port.options.mk>
 
 .if ${ARCH} == powerpc64
+CFLAGS+=	-Wno-unused-label
 USES+=		compiler:gcc-c++11-lib
 .else
 USES+=		compiler:c++11-lib

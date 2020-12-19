@@ -136,6 +136,7 @@
     SUBDIR += ftdi-eeprom
     SUBDIR += fxload
     SUBDIR += gcstar
+    SUBDIR += gedkeeper
     SUBDIR += geekcode
     SUBDIR += getopt
     SUBDIR += gimp-help-en
@@ -480,6 +481,7 @@
     SUBDIR += termatrix
     SUBDIR += teseq
     SUBDIR += thefuck
+    SUBDIR += thrill
     SUBDIR += tkcron
     SUBDIR += tkinfo
     SUBDIR += tkregexp

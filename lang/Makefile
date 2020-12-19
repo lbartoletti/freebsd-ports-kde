@@ -184,6 +184,9 @@
     SUBDIR += mlton
     SUBDIR += mmix
     SUBDIR += mono
+    SUBDIR += mono5.10
+    SUBDIR += mono5.20
+    SUBDIR += mono6.8
     SUBDIR += mono-basic
     SUBDIR += mosh
     SUBDIR += mosml
@@ -344,6 +347,7 @@
     SUBDIR += squeak
     SUBDIR += squirrel
     SUBDIR += swi-pl
+    SUBDIR += tauthon
     SUBDIR += tcbasic
     SUBDIR += tcc
     SUBDIR += tcl-manual
